@@ -55,7 +55,14 @@ function login(table){
 				if(parseInt(res)==0){
 					alert("帳號或密碼錯誤，請重新輸入")
 				}else{
-					location.href='index.php';
+					switch (table) {
+						case 'mem':
+							location.href='index.php';
+						break;					
+						case 'admin':
+							location.href='back.php';
+						break;					
+					}					
 					alert("恭喜登入成功！");
 				}
 			})
