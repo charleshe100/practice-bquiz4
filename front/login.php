@@ -18,6 +18,12 @@
     <tr>
         <td class="tt">驗證碼</td>
         <td class="pp">
+            <?php
+            $a=rand(10,99);
+            $b=rand(10,99);
+            $_SESSION['ans']=$a+$b;
+            echo "{$a} + {$b} = "
+            ?>
             <input type="text" name="ans" id="ans">
         </td>
     </tr>
