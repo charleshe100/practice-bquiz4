@@ -22,8 +22,19 @@
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
                 <a href="?do=buycart">購物車</a> |
-                <a href="?do=login">會員登入</a> |
-                <a href="?do=admin">管理登入</a>
+                <?php
+                if(isset($_SESSION['mem'])){
+                    echo "<a href='./api/logout.php?do=mem'>會員登出</a> |";
+                }else{
+                    echo "<a href='?do=login'>會員登入</a> |";
+                }
+
+                if(isset($_SESSION['admin'])){
+                    echo "<a href='back.php'>返回管理</a> |";
+                }else{
+                    echo "<a href='?do=admin'>管理員登入</a>";
+                }
+                ?>
             </div>
             <marquee>
                 情人節特惠活動 &nbsp;&nbsp; 年終特賣會開跑了
@@ -40,12 +51,12 @@
         </div>
         <div id="right">
             <?php
-            $do=$_GET['do']??'login';
+            $do=$_GET['do']??'main';
             $file="./front/{$do}.php";
             if(file_exists($file)){
                 include $file;
             }else{
-                include "./front/login.php";
+                include "./front/main.php";
             }
             ?>
         </div>
