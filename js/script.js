@@ -69,3 +69,10 @@ function login(table){
 		}
 	})
 }
+
+// 刪除功能
+function del(table,id){
+	$.post("./api/del.php",{table,id},function(){
+		location.reload()
+	})
+}
