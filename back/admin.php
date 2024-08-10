@@ -8,6 +8,7 @@
         <td class="tt">管理</td>
     </tr>
     <?php
+    /** @var DB $Admin */
     $rows=$Admin->all();
     foreach ($rows as $row) {             
     ?>

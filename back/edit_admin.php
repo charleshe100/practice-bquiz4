@@ -1,4 +1,5 @@
 <?php
+/** @var DB $Admin */
 $row=$Admin->find($_GET['id']);
 $row['pr']=unserialize($row['pr']);
 ?>
