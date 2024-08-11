@@ -35,11 +35,3 @@
 <div class="ct">
     <button onclick="location.href='index.php'">返回</button>
 </div>
-
-<?php
-// 可先以此方式新增管理員，看效果
-// $admin["acc"]="manager";
-// $admin["pw"]="5678";
-// $admin["pr"]=serialize([1,2,3,4,5]);
-// $Admin->save($admin);
-?>
