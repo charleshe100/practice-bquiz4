@@ -1,3 +1,7 @@
+<?php
+// dd($_SESSION['admin']);
+if($_SESSION['admin']=='admin'){
+?>
 <div class="ct">
     <button onclick="location.href='?do=add_admin'">新增管理員</button>
 </div>
@@ -11,6 +15,7 @@
     /** @var DB $Admin */
     $rows=$Admin->all();
     foreach ($rows as $row) {             
+    
     ?>
     <tr>
         <td class="pp"><?=$row['acc'];?></td>
@@ -35,6 +40,43 @@
 <div class="ct">
     <button onclick="location.href='index.php'">返回</button>
 </div>
+<?php
+}else{
+?>
+<?php
+/** @var DB $Admin */
+$acc=$_SESSION['admin'];
+$row=$Admin->q("SELECT * FROM `admin` WHERE `acc`='$acc'");
+// dd($row);
+$row[0]['pr']=unserialize($row[0]['pr']);
+// dd($row[0]['pr']);
+?>
+<h2 class="ct">顯示管理權限</h2>
+<form action="./api/save_admin.php" method="post">
+    <table class="all">
+        <tr>
+            <td class="tt ct">帳號</td>
+            <td class="pp"><?=$row[0]['acc'];?></td>
+        </tr>
+        <tr>
+            <td class="tt ct">密碼</td>
+            <td class="pp"><?=$row[0]['pw'];?></td>
+        </tr>
+        <tr>
+            <td class="tt ct">權限</td>
+            <td class="pp">
+                <input type="checkbox" name="pr[]" value="1" disabled <?=(in_array(1,$row[0]['pr']))?'checked':'';?>>商品分類與管理<br>
+                <input type="checkbox" name="pr[]" value="2" disabled <?=(in_array(2,$row[0]['pr']))?'checked':'';?>>訂單管理<br>
+                <input type="checkbox" name="pr[]" value="3" disabled <?=(in_array(3,$row[0]['pr']))?'checked':'';?>>會員管理<br>
+                <input type="checkbox" name="pr[]" value="4" disabled <?=(in_array(4,$row[0]['pr']))?'checked':'';?>>頁尾版權區管理<br>
+                <input type="checkbox" name="pr[]" value="5" disabled <?=(in_array(5,$row[0]['pr']))?'checked':'';?>>最新消息管理<br>
+            </td>
+        </tr>
+    </table>
+</form>
+<?php
+}
+?>
 
 <?php
 // 可先以此方式新增管理員，看效果
