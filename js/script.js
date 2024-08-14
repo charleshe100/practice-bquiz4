@@ -1,3 +1,4 @@
+console.log("Script loaded");
 // JavaScript Document
 function lof(x)
 {
@@ -75,4 +76,40 @@ function del(table,id){
 	$.post("./api/del.php",{table,id},function(){
 		location.reload()
 	})
+}
+
+// 新增大分類與中分類
+function addType(type){
+	let data={};
+	switch(type){
+		case "big":
+			data={name:$(`#${type}`).val(),big_id:0}
+		break;
+		case "mid":
+			data={name:$(`#${type}`).val(),big_id:$("#bigs").val()}
+		break;
+	}
+	$.post("./api/save_type.php",data,()=>{
+		location.reload();
+	})
+}
+
+// 載入大分類選單
+getType('big')
+
+function getTypes(type,big_id=0){
+	$get("./api/get_types.php",{type,big_id},(type)=>{
+		$(`#${type}s`).html(type)
+	})
+}
+
+// 編輯分類
+function edit(dom,id){
+    let text=$(dom).parent().prev().text()
+    let name=prompt("請輸入你要修改的類別名稱",text);
+    if(name!=null){
+        $.post("./api/save_type.php",{name,id},()=>{
+            $(dom).parent().prev().text(name)
+        })
+    }
 }
