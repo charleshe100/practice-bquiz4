@@ -97,9 +97,9 @@ function addType(type){
 // 載入大分類選單
 getType('big')
 
-function getTypes(type,big_id=0){
-	$get("./api/get_types.php",{type,big_id},(type)=>{
-		$(`#${type}s`).html(type)
+function getType(type,big_id=0){
+	$.get("./api/get_types.php",{type,big_id},(res)=>{
+		$(`#${type}s`).html(res)
 	})
 }
 

@@ -27,7 +27,7 @@ foreach ($bigs as $big) {
         $mids=$Type->all(['big_id'=>$big['id']]);
         foreach($mids as $mid){
     ?>
-    <tr class="tt">
+    <tr class="pp ct">
         <td><?=$mid['name'];?></td>
         <td class="ct">
             <button onclick="edit(this,<?=$mid['id'];?>)">修改</button>
