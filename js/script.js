@@ -113,3 +113,10 @@ function edit(dom,id){
         })
     }
 }
+
+// 控制商品上架、下架
+function sw(id,sh){
+	$.post("./api/sw.php",{id,sh},()=>{
+		location.reload();
+	})
+}
