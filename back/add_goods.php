@@ -58,23 +58,3 @@
         <button onclick="location.href='?do=th'">返回</button>
     </div>
 </form>
-
-<script>
-// 載入大分類選單
-getType('big')
-
-// 大分類和中分類選單連動
-$("#big").on("change",function(){
-	getType('mid',$("#big").val())
-})
-
-function getType(type,big_id=0){
-	$.get("./api/get_types.php",{type,big_id},(res)=>{
-		$(`#${type}`).html(res)
-
-		if(type=='big'){
-			getType('mid',$("#big").val())
-		}
-	})
-}
-</script>
