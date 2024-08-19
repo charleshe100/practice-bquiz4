@@ -8,6 +8,8 @@
 
 	<title>┌精品電子商務網站」</title>
 	<link href="./css/css.css" rel="stylesheet" type="text/css">	
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/script.js"></script>
 </head>
 
 <body>
@@ -49,8 +51,7 @@
 			頁尾版權 : <?=$Bottom->find(1)['bottom'];?>
 		</div>
 	</div>
-	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/script.js"></script>
+	
 </body>
 
 </html>
