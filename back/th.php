@@ -55,16 +55,23 @@ foreach ($bigs as $big) {
         <td>狀態</td>
         <td>操作</td>
     </tr>
+    <?php
+    $goods=$Goods->all();
+    foreach($goods as $g){
+    ?>    
     <tr class="ct pp">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><?=$g['no'];?></td>
+        <td><?=$g['name'];?></td>
+        <td><?=$g['stock'];?></td>
+        <td><?=($g['sh']==1);?></td>
         <td>
-            <button>修改</button>
-            <button>刪除</button>
-            <button>上架</button>
-            <button>下架</button>
+            <button onclick="location.href='?do=edit_goods&id=<?=$g['id'];?>'">修改</button>
+            <button onclick="del('goods',<?=$g['id'];?>)">刪除</button>
+            <button onclick="sw(<?=$g['id'];?>,1)">上架</button>
+            <button onclick="sw(<?=$g['id'];?>,0)">下架</button>
         </td>
     </tr>
+    <?php
+    }
+    ?>
 </table>

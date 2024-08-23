@@ -1,4 +1,4 @@
-console.log("Script loaded");
+// console.log("Script loaded");
 // JavaScript Document
 function lof(x)
 {
@@ -121,7 +121,7 @@ function sw(id,sh){
 	})
 }
 
-// 新增商品選單
+// 商品選單
 $(document).ready(function(){
 // 載入大分類選單
 getType('big')
@@ -136,7 +136,10 @@ function getType(type,big_id=0){
 		$(`#${type}`).html(res)
 
 		if(type=='big'){
+			$("#bigs option[value='<?=$goods['big'];?>']").prop('selected',true)
 			getType('mid',$("#big").val())
+		}else{
+			$("#mids option[value='<?=$goods['mid'];?>']").prop('selected',true)
 		}
 	})
 }
