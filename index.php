@@ -42,6 +42,44 @@
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;">
+            <div style="min-height:400px;">
+                <div class="ww">
+                    <a href='?type=0'>全部商品(<?=$Goods->count(['sh'=>1]);?>)</a>
+                </div>
+                <?php
+                $bigs=$Type->all(['big_id'=>0]);
+                foreach($bigs as $big){
+                    echo "<div class='ww'>";
+                    //建立大分類的超連結
+                    echo "<a href='?type={$big['id']}'>";
+                    //顯示大分類的名稱
+                    echo $big['name'];
+                    //計算該大分類下的所有商品數量
+                    echo "({$Goods->count(['big'=>$big['id'],'sh'=>1])})";
+                    echo "</a>";
+                
+                    //判斷此一大分類下是否有中分類
+                    if($Type->count(['big_id'=>$big['id']])>0){
+                        //取得所有中分類
+                        $mids=$Type->all(['big_id'=>$big['id']]);
+                        //使用迴圈列出所有中分類
+                        foreach($mids as $mid){
+                            //將分類包在class='s'的div中
+                            echo "<div class='s pp'>";
+                            //建立中分類的超連結
+                            echo "<a href='?type={$mid['id']}'>";
+                            //顯示中分類的名稱
+                            echo $mid['name'];
+                            //計算該中分類下的所有商品數量
+                            echo "({$Goods->count(['mid'=>$mid['id'],'sh'=>1])})";
+                            echo "</a>";
+                            echo "</div>";
+                        }
+                    }
+                    echo "</div>";
+                }
+                ?>
+                </div>
             </div>
             <span>
                 <div>進站總人數</div>

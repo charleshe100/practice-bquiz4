@@ -35,6 +35,12 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
+#left div.s  a{
+	background:lightgreen;
+	position:relative;
+	left:20px;
+	z-index:10;
+}
 .ct
 {
 	text-align:center;
