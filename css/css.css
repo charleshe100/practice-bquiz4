@@ -22,24 +22,18 @@ body
 	display:inline-block;
 	width:20%;
 	padding:2%;
-	min-height:550px;
+	height:550px;
 	vertical-align:top;
 	border:#000 1px solid;
+	overflow: auto;
 }
 #left a
 {
 	display:block;
 	padding:20px 5px 20px 5px;
-	text-decoration:none;
-	background:#F4C591;
+	text-decoration:none;	
 	margin:10px auto 10px auto;
 	color:#65350A;
-}
-#left div.s  a{
-	background:lightgreen;
-	position:relative;
-	left:20px;
-	z-index:10;
 }
 .ct
 {
@@ -105,15 +99,37 @@ input[type=text],input[type=password]
 {
 	width:170px;
 }
+.ww{
+	background:#F4C591;
+}
 .s
 {
-	display:none;
+	display:none;	
 }
 div.ww:hover > div.s
 {
 	display:block;
+	background: lightgreen;
 }
 .sb button
 {
 	font-size:12px;
+}
+.allFrontMain{
+    display:flex;
+}
+.allFrontMain>div:nth-child(1){
+    width:35%;
+    padding:15px;
+    margin:1px;
+}
+.allFrontMain>div:nth-child(2){
+    width:65%;
+    display:flex;
+    flex-wrap:wrap;
+}
+.allFrontMain>div:nth-child(2) div{
+    width:100%;
+    margin:1px;
+    padding:3px 5px;    
 }
