@@ -144,3 +144,11 @@ function getType(type,big_id=0){
 	})
 }
 })
+
+//購物車的函式
+function buycart(id){
+    //取得購買數量
+    let qt=$("#qt").val();
+    //將商品id與購買數量送到購物車中
+    location.href=`?do=buycart&id=${id}&qt=${qt}`;
+}

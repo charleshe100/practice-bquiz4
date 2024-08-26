@@ -69,6 +69,21 @@ body
 	min-width:100px;
 	padding:10px;
 }
+.all>div:nth-child(1){
+    width:60%;
+    padding:5px;
+    margin:1px;
+}
+.all>div:nth-child(2){
+    width:40%;
+    display:flex;
+    flex-wrap:wrap;
+}
+.all>div:nth-child(2) div{
+    width:100%;
+    margin:1px;
+    padding:3px 5px;
+}
 .tt
 {
 	background:#EF7429;
