@@ -1,5 +1,4 @@
 <?php
-echo $_GET['qt'];
 if(isset($_GET['id']) && isset($_GET['qt'])){
     $_SESSION['cart'][$_GET['id']]=$_GET['qt'];
 }
@@ -23,18 +22,37 @@ if(empty($_SESSION['cart'])){
         <td class="tt ct">小計</td>
         <td class="tt ct">刪除</td>
     </tr>
+    <?php
+    foreach ($_SESSION['cart'] as $id => $qt) {
+        $goods=$Goods->find($id);
+    ?>    
     <tr>
-        <td class="pp"></td>
-        <td class="pp"></td>
-        <td class="pp"></td>
-        <td class="pp"></td>
-        <td class="pp"></td>
-        <td class="pp"></td>
+        <td class="pp"><?=$goods['no'];?></td>
+        <td class="pp"><?=$goods['name'];?></td>
+        <td class="pp"><?=$qt;?></td>
+        <td class="pp"><?=$goods['stock'];?></td>
+        <td class="pp"><?=$goods['price'];?></td>
+        <td class="pp"><?=$goods['price'] * intval($qt);?></td>
         <td class="pp">
-            <img src="./icon/0415.jpg" alt="">
+            <img src="./icon/0415.jpg" onclick="removeItem(<?=$id;?>)">
         </td>
     </tr>
+    <?php } ?>
 </table>
+<div class="ct">
+    <img src="./icon/0411.jpg" onclick="location.href='index.php'">
+    <img src="./icon/0412.jpg" onclick="location.href='?do=checkout'">
+</div>
 <?php
 }
 ?>
+
+<script>
+function removeItem(id){
+	console.log('removeItem Ok');
+	
+	$.post("./api/del_cart.php",{id},function(){
+		location.href='index.php?do=buycart';
+	})
+}
+</script>

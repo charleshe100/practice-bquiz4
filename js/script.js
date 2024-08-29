@@ -136,10 +136,10 @@ function getType(type,big_id=0){
 		$(`#${type}`).html(res)
 
 		if(type=='big'){
-			$("#bigs option[value='<?=$goods['big'];?>']").prop('selected',true)
+			$("#big option[value=\"<?=$goods['big'];?>\"]").prop('selected',true)
 			getType('mid',$("#big").val())
 		}else{
-			$("#mids option[value='<?=$goods['mid'];?>']").prop('selected',true)
+			$("#mid option[value=\"<?=$goods['mid'];?>\"]").prop('selected',true)
 		}
 	})
 }
