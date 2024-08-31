@@ -3,9 +3,7 @@
 <table class="all">
     <tr>
         <td class="tt ct">帳號</td>
-        <td class="pp">
-            <?=$user['acc'];?>
-        </td>
+        <td class="pp"><?=$user['acc'];?></td>
     </tr>
     <tr>
         <td class="tt ct">姓名</td>

@@ -3,7 +3,7 @@
 //後六碼用亂數來產生
 $_POST['no']=date("Ymd").rand(100000,999999);
 
-$_POST['acc']=$_SESSION['user'];
+$_POST['acc']=$_SESSION['mem'];
 
 $_POST['orderdate']=date("Y-m-d");
 

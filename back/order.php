@@ -14,15 +14,14 @@
     ?>
     <tr>
         <td class="pp">
-            <a href="?do=order_detail&id=<?=$row['id'];?>"></a>
-            <?=$row['no'];?>
+            <a href="?do=order_detail&id=<?=$row['id'];?>"><?=$row['no'];?></a>            
         </td>
         <td class="pp"><?=$row['total'];?></td>
         <td class="pp"><?=$row['acc'];?></td>
         <td class="pp"><?=$row['name'];?></td>
         <td class="pp"><?=$row['orderdate'];?></td>
         <td class="pp">
-            <button onclick="del('order',<?=$row['id'];?>)">刪除</button>            
+            <button onclick="del('orders',<?=$row['id'];?>)">刪除</button>            
         </td>
     </tr>
     <?php
