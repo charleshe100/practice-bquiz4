@@ -66,7 +66,7 @@ foreach ($bigs as $big) {
         <td><?=($g['sh']==1);?></td>
         <td>
             <button onclick="location.href='?do=edit_goods&id=<?=$g['id'];?>'">修改</button>
-            <button onclick="del('goods',<?=$g['id'];?>)">刪除</button>
+            <button onclick="del('goods',<?=$g['id'];?>)">刪除</button><br>
             <button onclick="sw(<?=$g['id'];?>,1)">上架</button>
             <button onclick="sw(<?=$g['id'];?>,0)">下架</button>
         </td>

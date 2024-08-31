@@ -32,6 +32,7 @@
 				echo in_array(3,$pr)?"<a href='?do=mem'>會員管理</a>":"";
 				echo in_array(4,$pr)?"<a href='?do=bot'>頁尾版權管理</a>":"";
 				echo in_array(5,$pr)?"<a href='?do=news'>最新消息管理</a>":"";
+				echo in_array(6,$pr)?"<a href='?do=total'>進站總人數管理</a>":"";
 				?>
 				<a href="./api/logout.php?do=admin" style="color:#f00;">登出</a>
 			</div>

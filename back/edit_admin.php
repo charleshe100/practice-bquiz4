@@ -26,6 +26,7 @@ $row['pr']=unserialize($row['pr']);
                 <input type="checkbox" name="pr[]" value="3" <?=(in_array(3,$row['pr']))?'checked':'';?>>會員管理<br>
                 <input type="checkbox" name="pr[]" value="4" <?=(in_array(4,$row['pr']))?'checked':'';?>>頁尾版權區管理<br>
                 <input type="checkbox" name="pr[]" value="5" <?=(in_array(5,$row['pr']))?'checked':'';?>>最新消息管理<br>
+                <input type="checkbox" name="pr[]" value="6" <?=(in_array(6,$row['pr']))?'checked':'';?>>進站總人數管理<br>
             </td>
         </tr>
     </table>

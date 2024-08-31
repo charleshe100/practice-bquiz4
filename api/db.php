@@ -142,4 +142,10 @@ $Goods=new DB('goods');
 $Mem=new DB('mem');
 $Order=new DB('orders');
 $Type=new DB('type');
+$Total=new DB('total');
+
+if(!isset($_SESSION['visited'])){
+    $Total->q("UPDATE `total` SET `total`=`total`+1 WHERE `id`=1");
+    $_SESSION['visited']=1;
+}
 ?>

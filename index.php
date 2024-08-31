@@ -82,7 +82,7 @@
                 </div>
             </div>
             <span>
-                <div>進站總人數</div>
+                <div>進站總人數：<?=$Total->find(1)['total'];?></div>
                 <div style="color:#f00; font-size:28px;">                
                 </div>
             </span>

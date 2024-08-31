@@ -21,6 +21,7 @@
                 <input type="checkbox" name="pr[]" value="3">會員管理<br>
                 <input type="checkbox" name="pr[]" value="4">頁尾版權區管理<br>
                 <input type="checkbox" name="pr[]" value="5">最新消息管理<br>
+                <input type="checkbox" name="pr[]" value="6">進站總人數管理<br>
             </td>
         </tr>
     </table>
