@@ -26,7 +26,7 @@ $types=$Type->find($goods['big'])['name']." > ".$Type->find($goods['mid'])['name
 </div>
 <div class="ct all tt">
     購買數量:
-    <input type="number" value='1' style="width:30px;">
+    <input type="number" id="qt" value='1' style="width:30px;">
     <a href="Javascript:buycart(<?=$goods['id'];?>)">
         <img src="./icon/0402.jpg" alt="">
     </a>
