@@ -18,13 +18,8 @@
     <tr>
         <td class="tt">驗證碼</td>
         <td class="pp">
-            <?php
-            $a=rand(10,99);
-            $b=rand(10,99);
-            $_SESSION['ans']=$a+$b;
-            echo "{$a} + {$b} = "
-            ?>
-            <input type="text" name="ans" id="ans">
+            <input type="text" name="ans" id="ans"><br>
+            <img src="" id="captcha"><button onclick="captcha()">重新產生</button> 
         </td>
     </tr>
 </table>

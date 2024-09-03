@@ -152,3 +152,15 @@ function buycart(id){
     //將商品id與購買數量送到購物車中
     location.href=`?do=buycart&id=${id}&qt=${qt}`;
 }
+
+
+//驗證碼
+$(document).ready(function(){
+	captcha(); 
+	function captcha(){
+		$.get("./api/captcha.php",(img)=>{
+			console.log(img);
+			$("#captcha").attr("src",img)
+		})
+	}   
+})
